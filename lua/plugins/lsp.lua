@@ -10,9 +10,11 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
-    "onsails/lspkind.nvim"
+    "onsails/lspkind.nvim",
+    "j-hui/fidget.nvim",
   },
   config = function()
+    require("fidget").setup({})
     require('mason').setup()
     require('mason-lspconfig').setup({
       ensure_installed = { 'lua_ls' }
