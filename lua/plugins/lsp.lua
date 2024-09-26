@@ -80,10 +80,10 @@ return {
         ['<C-y>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
       sources = {
-        { name = 'nvim_lsp', keyword_length = 2 },
-        { name = 'luasnip',  keyword_length = 2 },
-        { name = 'buffer' },
-        { name = 'path' }
+        { name = 'nvim_lsp', keyword_length = 1 },
+        { name = 'luasnip',  keyword_length = 1 },
+        { name = 'buffer', keyword_length = 2 },
+        { name = 'path', keyword_length = 2 }
       },
       window = {
         documentation = cmp.config.window.bordered(),
