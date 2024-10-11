@@ -29,6 +29,7 @@ return {
     lsp.powershell_es.setup {
       bundle_path = 'c:/Software/Dev/PowerShellEditorServices/',
       capabilities = lsp_capabilities
+      settings = { powershell = { codeFormatting = { Preset = 'Allman' } } }
     }
     -- Lua
     --
