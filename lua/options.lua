@@ -7,6 +7,7 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 -- Colors
 vim.cmd.colorscheme "catppuccin"
+vim.opt.termguicolors = true
 -- Scroll
 vim.opt.scrolloff = 12
 vim.opt.signcolumn = "yes"
