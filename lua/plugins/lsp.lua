@@ -11,42 +11,113 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
-    "j-hui/fidget.nvim",
+    {
+      "j-hui/fidget.nvim",
+      opts = {
+        progress = {
+          display = {
+            done_icon = '✓', -- Icon shown when all LSP progress tasks are complete
+          },
+        },
+        notification = {
+          window = {
+            winblend = 0, -- Background color opacity in the notification window
+          },
+        },
+      },
+    },
   },
   config = function()
-    require("fidget").setup({})
-    require('mason').setup()
-    require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls' }
-    })
-
-    local lsp = require('lspconfig')
     local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local lspkind = require('lspkind')
 
-    -- PowerShell
-    --
-    lsp.powershell_es.setup {
-      bundle_path = 'c:/Software/Dev/PowerShellEditorServices/',
-      capabilities = lsp_capabilities,
-      settings = { powershell = { codeFormatting = { Preset = 'Allman' } } }
+    local servers = {
+      bashls = {},
+      lua_ls = {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' }
+            },
+          },
+        },
+      },
+      powershell_es = {
+        bundle_path = 'c:/Software/Dev/PowerShellEditorServices/',
+        capabilities = lsp_capabilities,
+        settings = {
+          powershell = {
+            codeFormatting = {
+              Preset = 'Allman'
+            },
+          },
+        },
+      },
+      pylsp = {
+        settings = {
+          pylsp = {
+            plugins = {
+              pyflakes = { enabled = false },
+              pycodestyle = { enabled = false },
+              autopep8 = { enabled = false },
+              yapf = { enabled = false },
+              mccabe = { enabled = false },
+              pylsp_mypy = { enabled = false },
+              pylsp_black = { enabled = false },
+              pylsp_isort = { enabled = false },
+            },
+          },
+        },
+      },
+      ruff = {
+        -- Notes on code actions: https://github.com/astral-sh/ruff-lsp/issues/119#issuecomment-1595628355
+        -- Get isort like behavior: https://github.com/astral-sh/ruff/issues/8926#issuecomment-1834048218
+        commands = {
+          RuffAutofix = {
+            function()
+              vim.lsp.buf.execute_command {
+                command = 'ruff.applyAutofix',
+                arguments = {
+                  { uri = vim.uri_from_bufnr(0) },
+                },
+              }
+            end,
+            description = 'Ruff: Fix all auto-fixable problems',
+          },
+          RuffOrganizeImports = {
+            function()
+              vim.lsp.buf.execute_command {
+                command = 'ruff.applyOrganizeImports',
+                arguments = {
+                  { uri = vim.uri_from_bufnr(0) },
+                },
+              }
+            end,
+            description = 'Ruff: Format imports',
+          },
+        },
+      },
     }
-    -- Lua
-    --
-    lsp.lua_ls.setup {
-      capabilities = lsp_capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            globals = { 'vim' }
-          }
-        }
-      }
+
+    require('mason').setup()
+
+    local ensure_installed = vim.tbl_keys(servers or {})
+
+    require('mason-lspconfig').setup {
+      ensure_installed = ensure_installed,
+      handlers = {
+        function(server_name)
+          local server = servers[server_name] or {}
+          server.capabilities = lsp_capabilities
+          require('lspconfig')[server_name].setup(server)
+        end,
+      },
     }
+
+    local lspkind = require('lspkind')
 
     --Prettyfy with icons
     --
-    lspkind.init{}
+    lspkind.init {}
 
     -- Snippets
     --
@@ -83,8 +154,8 @@ return {
       sources = {
         { name = 'nvim_lsp', keyword_length = 1 },
         { name = 'luasnip',  keyword_length = 1 },
-        { name = 'buffer', keyword_length = 2 },
-        { name = 'path', keyword_length = 3 }
+        { name = 'buffer',   keyword_length = 2 },
+        { name = 'path',     keyword_length = 3 }
       },
       window = {
         documentation = cmp.config.window.bordered(),
@@ -95,17 +166,16 @@ return {
       },
     })
 
-    vim.keymap.set({ "i", "s" }, "<C-k>", function ()
+    vim.keymap.set({ "i", "s" }, "<C-k>", function()
       if luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       end
     end, { silent = true })
 
-    vim.keymap.set({ "i", "s" }, "<C-j>", function ()
+    vim.keymap.set({ "i", "s" }, "<C-j>", function()
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
       end
     end, { silent = true })
-
   end -- end config
 }
