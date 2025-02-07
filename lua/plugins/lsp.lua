@@ -115,8 +115,16 @@ return {
       sources = {
         { name = "nvim_lsp", keyword_length = 1 },
         { name = "luasnip",  keyword_length = 1 },
-        { name = "buffer",   keyword_length = 2 },
-        { name = "path",     keyword_length = 3 },
+        {
+          name = "buffer",
+          keyword_length = 2,
+          option = {
+            get_bufnrs = function()
+              return vim.api.nvim_list_bufs()
+            end,
+          },
+        },
+        { name = "path", keyword_length = 3 },
       },
       window = {
         documentation = cmp.config.window.bordered(),
