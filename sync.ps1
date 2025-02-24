@@ -1,9 +1,33 @@
-$CurrentLocation = Get-Location
+$path = "~\github_nvim_sync.xml"
 
-Set-Location ~\AppData\Local\nvim
+$run_sync = $false
 
-& git fetch
-& git pull
+if(Test-Path -Path $path)
+{
+  $lastrun = Import-Clixml -Path $path
+  $run_sync = (New-TimeSpan -Start $lastrun -End (Get-Date)).Hours -gt 5
+}
+else
+{
+  Get-Date | Export-Clixml -Path $path
+  $run_sync = $true
+}
 
-Set-Location $CurrentLocation.Path
+if($run_sync)
+{
+  Write-Host "Syncing nvim config from GitHub"
+
+  $CurrentLocation = Get-Location
+
+  Set-Location ~\AppData\Local\nvim
+
+  & git fetch
+  & git pull
+
+  Set-Location $CurrentLocation.Path
+}
+else
+{
+  Write-Host "Skipping for now"
+}
 
