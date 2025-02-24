@@ -25,6 +25,8 @@ if($run_sync)
   & git pull
 
   Set-Location $CurrentLocation.Path
+
+  Get-Date | Export-Clixml -Path $path
 }
 else
 {
