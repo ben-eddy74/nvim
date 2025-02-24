@@ -7,16 +7,16 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 -- Colors
 vim.cmd.colorscheme("catppuccin")
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 -- Scroll
-vim.opt.scrolloff = 12
-vim.opt.signcolumn = "yes"
-vim.opt.colorcolumn = "80"
+vim.o.scrolloff = 12
+vim.o.signcolumn = "yes"
+vim.o.colorcolumn = "80"
 -- Tabs
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
 -- Clipboard
 vim.opt.clipboard = "unnamedplus" -- use systems clipboard
 -- Shell
