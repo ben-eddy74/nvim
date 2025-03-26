@@ -10,11 +10,7 @@ return {
             local default_capabilities = vim.lsp.protocol.make_client_capabilities()
             local capabilities = require("blink.cmp").get_lsp_capabilities(default_capabilities)
 
-<<<<<<< HEAD
             vim.keymap.set("n", "<leader>lsp", function()
-=======
-            vim.keymap.set("n", "<leader>ip", function()
->>>>>>> 6e04e7aeaf347fef78e287804aa930afae91dc96
                 vim.cmd("MasonInstall lua-language-server")
                 vim.cmd("MasonInstall pyright")
                 vim.cmd("MasonInstall ruff")
