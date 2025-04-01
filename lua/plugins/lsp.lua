@@ -54,6 +54,9 @@ return {
                 },
             })
         end,
+        keys = {
+            { "<leader>cf", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Show code actions" } }
+        }
     },
     {
         "saghen/blink.cmp",
