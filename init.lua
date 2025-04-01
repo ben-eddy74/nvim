@@ -75,8 +75,8 @@ vim.filetype.add({
     }
 })
 -- Quickfix navigation
-vim.keymap.set("n", "<leader>qn<CR>", "<cmd>cnext", { desc = "Go to next quickfix list entry" })
-vim.keymap.set("n", "<leader>qp<CR>", "<cmd>cprevious", { desc = "Go to previous quickfix list entry" })
+vim.keymap.set("n", "<leader>qn", "<cmd>cnext<CR>", { desc = "Go to next quickfix list entry" })
+vim.keymap.set("n", "<leader>qp", "<cmd>cprevious<CR>", { desc = "Go to previous quickfix list entry" })
 
 -- Terminal
 --- remove line numbers
