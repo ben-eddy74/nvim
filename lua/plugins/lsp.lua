@@ -54,10 +54,13 @@ return {
                 },
             })
         end,
+        keys = {
+            { "<leader>cf", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Show code actions" } }
+        }
     },
     {
         "saghen/blink.cmp",
-        dependencies = { "rafamadriz/friendly-snippets","neovim/nvim-lspconfig",  },
+        dependencies = { "rafamadriz/friendly-snippets", "neovim/nvim-lspconfig", },
         -- use a release tag to download pre-built binaries
         version = "*",
         ---@module 'blink.cmp'
