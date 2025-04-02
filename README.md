@@ -1,5 +1,15 @@
 # My nvim config
 
+## Linux
+
+### Ubuntu
+
+To install a C compiler:
+
+```bash
+sudo apt install build-essential
+```
+
 ## Windows
 
 To install a C compiler, the easiest method is to install the MinGW package.

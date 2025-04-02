@@ -68,9 +68,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end,
 })
 
+-- Custom file types
+vim.filetype.add({
+    pattern = {
+        ['.*ansible/.*.yml'] = 'ansible',
+    }
+})
 -- Quickfix navigation
-vim.keymap.set("n", "<leader>qn", "<cmd>cnext", { desc = "Go to next quickfix list entry" })
-vim.keymap.set("n", "<leader>qp", "<cmd>cprevious", { desc = "Go to previous quickfix list entry" })
+vim.keymap.set("n", "<leader>qn", "<cmd>cnext<CR>", { desc = "Go to next quickfix list entry" })
+vim.keymap.set("n", "<leader>qp", "<cmd>cprevious<CR>", { desc = "Go to previous quickfix list entry" })
 
 -- Terminal
 --- remove line numbers
