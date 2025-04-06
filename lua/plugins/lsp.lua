@@ -20,6 +20,8 @@ return {
                 vim.cmd("MasonInstall lua-language-server")
                 vim.cmd("MasonInstall pyright")
                 vim.cmd("MasonInstall ruff")
+                vim.cmd("MasonInstall html-lsp")
+                vim.cmd("MasonInstall typescript-language-server")
             end, { desc = "Install LSP packages" })
 
             vim.keymap.set("n", "<leader>cf", function()
@@ -71,6 +73,8 @@ return {
                     },
                 },
             })
+            lspconfig.ts_ls.setup {}
+            lspconfig.html.setup {}
         end,
     },
     {
