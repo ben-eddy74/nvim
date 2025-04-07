@@ -1,3 +1,7 @@
+param(
+  [switch]$Force
+  )
+
 $path = "~\github_nvim_sync.xml"
 
 $run_sync = $false
@@ -13,7 +17,7 @@ else
   $run_sync = $true
 }
 
-if($run_sync)
+if($run_sync -or $Force.IsPresent)
 {
   Write-Host "Syncing nvim config from GitHub"
 
