@@ -1,10 +1,10 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		opts = {},
 		dependencies = {
 			"saghen/blink.cmp",
 		},
+		opts = {},
 		config = function()
 			local lspconfig = require("lspconfig")
 			local default_capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -22,12 +22,11 @@ return {
 				vim.cmd("MasonInstall ruff")
 				vim.cmd("MasonInstall html-lsp")
 				vim.cmd("MasonInstall typescript-language-server")
+				vim.cmd("MasonInstall eslint_d")
 			end, { desc = "Install LSP packages" })
 
 			vim.keymap.set("n", "<leader>cf", function()
-				if vim.bo.ft == "python" then
-					vim.lsp.buf.code_action()
-				end
+				vim.lsp.buf.code_action()
 			end)
 
 			lspconfig.powershell_es.setup({
@@ -51,6 +50,7 @@ return {
 					},
 				},
 			})
+
 			lspconfig.pyright.setup({
 				capabilities = capabilities,
 				settings = {
@@ -73,13 +73,15 @@ return {
 					},
 				},
 			})
-			lspconfig.ts_ls.setup({})
+
 			lspconfig.html.setup({})
+
+			lspconfig.ts_ls.setup({})
 		end,
 	},
 	{
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets", "neovim/nvim-lspconfig" },
+		dependencies = { "rafamadriz/friendly-snippets" },
 		-- use a release tag to download pre-built binaries
 		version = "*",
 		---@module 'blink.cmp'
@@ -127,6 +129,35 @@ return {
 				end,
 				{ desc = "Stop snippet placeholders" },
 			},
+		},
+	},
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			vim.env.ESLINT_D_PPID = vim.fn.getpid()
+			require("lint").linters_by_ft = {
+				javascript = { "eslint_d" },
+			}
+		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		dependencies = {
+			"neovim/nvim-lspconfig",
+		},
+		event = { "BufWritePre" },
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff_format" },
+			},
+			format_on_save = {
+				timeout_ms = 500,
+				lsp_fallback = true,
+			},
+		},
+		keys = {
+			{ "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", "Format current buffer" },
 		},
 	},
 }

@@ -50,6 +50,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 vim.keymap.set("n", "<PageUp>", ":bprevious<CR>")
 vim.keymap.set("n", "<PageDown>", ":bnext<CR>")
 vim.keymap.set("n", "<leader>d", ":bd<CR>")
+vim.keymap.set("n", "<leader>ft", ":= vim.bo.filetype<CR>", { desc = "Get filetype of current buffer" })
 -- Set highlight on search but clear on pressing Esc in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -105,6 +106,15 @@ vim.keymap.set("n", "<leader>st", function()
 	vim.cmd.wincmd("J")
 	vim.api.nvim_win_set_height(0, 14)
 end, { desc = "Open small terminal window" })
+
+-- LSP
+--- Disable semanticTokensProvider
+vim.api.nvim_create_autocmd("LspDetach", {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		client.server_capabilities.semanticTokensProvider = nil
+	end,
+})
 
 --
 -- Setup lazy.nvim
