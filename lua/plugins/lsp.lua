@@ -99,6 +99,20 @@ return {
                 nerd_font_variant = "mono",
             },
 
+            completion = {
+                accept = {
+                    auto_brackets = {
+                        enabled = false,
+                    },
+                },
+                documentation = {
+                    auto_show = true,
+                },
+                menu = {
+                    border = "rounded",
+                },
+            },
+
             sources = {
                 default = { "lsp", "buffer", "snippets", "path" },
                 providers = {
@@ -113,14 +127,18 @@ return {
                     },
                 },
             },
-
             fuzzy = {
                 implementation = "prefer_rust_with_warning",
                 prebuilt_binaries = {
                     extra_curl_args = { "--insecure" },
                 },
             },
-            signature = { enabled = true },
+            signature = {
+                enabled = true,
+                window = {
+                    show_documentation = false,
+                },
+            },
         },
         opts_extend = { "sources.default" },
         keys = {
