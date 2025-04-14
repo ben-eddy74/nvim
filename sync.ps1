@@ -9,7 +9,7 @@ $run_sync = $false
 if(Test-Path -Path $path)
 {
   $lastrun = Import-Clixml -Path $path
-  $run_sync = (New-TimeSpan -Start $lastrun -End (Get-Date)).Hours -gt 5
+  $run_sync = (New-TimeSpan -Start $lastrun -End (Get-Date)).TotalHours -gt 5
 }
 else
 {
