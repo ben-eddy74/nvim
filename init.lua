@@ -4,6 +4,9 @@ if Home_directory == nil then
 	Home_directory = os.getenv("USERPROFILE")
 end
 
+-- Set Powershell Editor Services path variable
+PSes_path = Home_directory .. "/AppData/local/nvim-data/mason/packages/powershell-editor-services"
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -51,6 +54,7 @@ vim.opt.guicursor = "" -- Fat cursor
 vim.opt.clipboard = "unnamedplus" -- use systems clipboard
 vim.opt.ignorecase = true
 vim.opt.smartcase = true -- Override the 'ignorecase' option if the search pattern contains upper case characters
+vim.o.winborder = "rounded"
 -- Scroll
 vim.opt.scrolloff = 12
 vim.opt.signcolumn = "yes"
@@ -68,12 +72,12 @@ vim.keymap.set("n", "<leader>ft", ":= vim.bo.filetype<CR>", { desc = "Get filety
 -- Set highlight on search but clear on pressing Esc in normal mode
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>")
--- Keep curser in the middle when jumping forward or backward
-vim.keymap.set("n", "<C-f>", "<C-f>zzzv")
-vim.keymap.set("n", "<C-b>", "<C-b>zzzv")
--- Keep curser in the middle when going to next or previous search
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- Keep cursor in the middle when jumping forward or backward
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+--vim.keymap.set("n", "<C-b>", "<C-b>zz")
+-- Keep cursor in the middle when going to next or previous search
+vim.keymap.set("n", "n", "nzz")
+vim.keymap.set("n", "N", "Nzz")
 
 -- Highlight yanking
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -203,6 +207,7 @@ vim.lsp.enable("python")
 vim.lsp.enable("ruff")
 vim.lsp.enable("html")
 vim.lsp.enable("typescript")
+vim.lsp.enable("html")
 
 vim.keymap.set("n", "<leader>lsp", function()
 	vim.cmd("MasonInstall powershell-editor-services")
@@ -211,7 +216,7 @@ vim.keymap.set("n", "<leader>lsp", function()
 	vim.cmd("MasonInstall ruff")
 	vim.cmd("MasonInstall html-lsp")
 	vim.cmd("MasonInstall typescript-language-server")
-	vim.cmd("MasonInstall eslint_d") -- javascript linter
+	vim.cmd("MasonInstall eslint_lsp") -- javascript linter
 	vim.cmd("MasonInstall stylua")
 end, { desc = "Install LSP packages" })
 
@@ -220,6 +225,9 @@ vim.keymap.set("n", "<leader>ca", function()
 end, { desc = "Trigger code action menu" })
 
 vim.keymap.set("n", "<leader>fo", "<cmd>lua vim.lsp.buf.format()<CR>", { desc = "Format current buffer" })
+
+-- Python
+vim.keymap.set("n", "<leader>pyb", "<cmd>!uv build<CR>", { desc = "UV: Build python module" })
 
 -- Powershell
 vim.keymap.set(
