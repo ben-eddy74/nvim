@@ -4,7 +4,10 @@ return {
 		"-NoLogo",
 		"-NoProfile",
 		"-Command",
-		"& $env:USERPROFILE\\AppData\\local\\nvim-data\\mason\\packages\\powershell-editor-services\\PowerShellEditorServices\\Start-EditorServices.ps1 -stdio -SessionDetailsPath $ENV:USERPROFILE/pwessession.json",
+		PSes_path .. "\\PowerShellEditorServices\\Start-EditorServices.ps1",
+		"-BundledModulesPath " .. PSes_path,
+		"-stdio",
+		"-SessionDetailsPath $ENV:USERPROFILE/pwessession.json",
 	},
 	settings = {
 		bundle_path = Home_directory .. "/AppData/local/nvim-data/mason/packages/powershell-editor-services",
