@@ -29,8 +29,9 @@ return {
 				lua = { "stylua" },
 				python = { "ruff_format" },
 			},
-			-- Set up format-on-save
-			format_on_save = { timeout_ms = 500 },
+			format_after_save = {
+				lsp_format = "fallback",
+			},
 		},
 	},
 	{ "folke/tokyonight.nvim", priority = 1000, opts = {} },
@@ -115,10 +116,11 @@ return {
 							name = "mylama",
 							schema = {
 								model = {
-									default = "qwen3:8b",
+									--default = "qwen3:14b",
+									default = "deepseek-coder:6.7b",
 								},
 								num_ctx = {
-									default = 16384,
+									default = 4096,
 								},
 								num_predict = {
 									default = -1,
