@@ -24,14 +24,22 @@ return {
 		"stevearc/conform.nvim",
 		opts = {
 			event = { "BufWritePre" },
+			opts = {
+				format = { timeout_ms = 4000 },
+			},
 			-- Define your formatters
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_format" },
 			},
-			format_after_save = {
+			format_on_save = {
+				-- I recommend these options. See :help conform.format for details.
 				lsp_format = "fallback",
+				timeout_ms = 1500,
 			},
+			-- format_after_save = {
+			-- 	lsp_format = "fallback",
+			-- },
 		},
 	},
 	{ "folke/tokyonight.nvim", priority = 1000, opts = {} },
