@@ -37,7 +37,7 @@ require("lazy").setup({
 		{ import = "plugins" },
 	},
 	-- automatically check for plugin updates
-	checker = { enabled = false, notify = true, frequency = 345600 },
+	checker = { enabled = true, notify = true, frequency = 345600 },
 	-- Disable hererocks
 	opts = { rocks = { enabled = false } },
 })
