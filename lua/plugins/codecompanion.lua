@@ -29,7 +29,7 @@ return {
 					return require("codecompanion.adapters").extend("gemini", {
 						schema = {
 							model = {
-								default = "gemini-2.5-flash-lite",
+								default = "gemini-2.5-flash",
 							},
 						},
 					})
@@ -45,6 +45,11 @@ return {
 			},
 		},
 		prompt_library = {
+			markdown = {
+				dirs = {
+					vim.fn.stdpath("config") .. "./prompts",
+				},
+			},
 			["Code reviewer"] = {
 				strategy = "chat",
 				description = "A code review",
