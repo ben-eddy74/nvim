@@ -1,6 +1,7 @@
 -- Get path to home directory
 Home_directory = os.getenv("HOME")
 if Home_directory == nil then
+	-- Windows
 	Home_directory = os.getenv("USERPROFILE")
 end
 
@@ -110,6 +111,20 @@ vim.keymap.set("n", "<leader>qp", "<cmd>cprevious<CR>", { desc = "Go to previous
 
 -- Terminal
 vim.cmd.colorscheme("tokyonight")
+
+local powershell_options = {
+	shell = vim.fn.executable("pwsh") == 1 and "pwsh" or "powershell",
+	shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;",
+	shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait",
+	shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode",
+	shellquote = "",
+	shellxquote = "",
+}
+
+for option, value in pairs(powershell_options) do
+	vim.opt[option] = value
+end
+
 --- remove line numbers
 vim.api.nvim_create_autocmd("TermOpen", {
 	group = vim.api.nvim_create_augroup("custom-term-open", { clear = true }),
