@@ -26,5 +26,6 @@ return {
 		},
 	},
 	filetypes = { "ps1", "psd1", "psm1" },
-	root_markers = { "requiredmodules.psd1" },
+	root_markers = { "build.ps1" },
 }
+
