@@ -33,6 +33,8 @@ return {
 
 		-- (Default) Only show the documentation popup when manually triggered
 		completion = {
+			ghost_text = { enabled = true, show_with_menu = false },
+			menu = { auto_show = false },
 			list = {
 				selection = {
 					auto_insert = false,
@@ -50,7 +52,6 @@ return {
 				},
 				auto_show_delay_ms = 100,
 			},
-			ghost_text = { enabled = true },
 		},
 
 		-- Default list of enabled providers defined so that you can extend it
