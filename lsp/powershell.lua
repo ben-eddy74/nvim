@@ -7,7 +7,7 @@ return {
 		PSes_path .. "\\PowerShellEditorServices\\Start-EditorServices.ps1",
 		"-BundledModulesPath " .. PSes_path,
 		"-stdio",
-		"-SessionDetailsPath ./psessession.json",
+		"-SessionDetailsPath " .. PSes_path .. "pssession.json",
 		"-LogLevel 'Information'",
 	},
 	settings = {
@@ -28,4 +28,3 @@ return {
 	filetypes = { "ps1", "psd1", "psm1" },
 	root_markers = { "build.ps1" },
 }
-
