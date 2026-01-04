@@ -1,3 +1,4 @@
+-- https://github.com/saghen/blink.cmp
 return {
 	"saghen/blink.cmp",
 	dependencies = { "rafamadriz/friendly-snippets" },
@@ -31,12 +32,39 @@ return {
 		},
 
 		-- (Default) Only show the documentation popup when manually triggered
-		completion = { documentation = { auto_show = false } },
+		completion = {
+			list = {
+				selection = {
+					auto_insert = false,
+				},
+			},
+			accept = {
+				auto_brackets = { enabled = false },
+			},
+			documentation = {
+				auto_show = true,
+				window = {
+					border = "rounded",
+					winblend = 10,
+					winhighlight = "Normal:CatppuccinSurface0,FloatBorder:CatppuccinSurface2,Search:None",
+				},
+				auto_show_delay_ms = 100,
+			},
+			ghost_text = { enabled = true },
+		},
 
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
+			providers = {
+				lsp = { fallbacks = {} },
+				snippets = {
+					opts = {
+						friendly_snippets = true,
+					},
+				},
+			},
 		},
 
 		-- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
