@@ -1,3 +1,4 @@
+-- https://github.com/nvim-treesitter/nvim-treesitter
 require("nvim-treesitter").install({
 	"bash",
 	"comment",
@@ -29,17 +30,6 @@ require("nvim-treesitter").install({
 	"vimdoc",
 	"xml",
 	"yaml",
-})
-
-require("nvim-treesitter").setup({
-	auto_install = true,
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-	indent = {
-		enable = true,
-	},
 })
 
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
