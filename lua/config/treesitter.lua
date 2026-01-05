@@ -4,7 +4,6 @@ require("nvim-treesitter").install({
 	"comment",
 	"css",
 	"diff",
-	"dockerfile",
 	"gitignore",
 	"html",
 	"ini",
