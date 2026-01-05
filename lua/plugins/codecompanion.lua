@@ -56,12 +56,17 @@ return {
 		{
 			"<leader>cca",
 			"<cmd>CodeCompanionActions<cr>",
-			desc = "CodeCompanionActions",
+			desc = "CodeCompanion Actions",
 		},
 		{
 			"<leader>ccc",
 			"<cmd>CodeCompanionChat Toggle<cr>",
-			desc = "CodeCompanionChat",
+			desc = "CodeCompanion Chat",
+		},
+		{
+			"<leader>cci",
+			":CodeCompanion #{buffer} ",
+			desc = "CodeCompanion Inline Assistant",
 		},
 	},
 }
