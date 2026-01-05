@@ -8,11 +8,11 @@ opt.scrolloff = 12 -- Keep 12 lines above/below cursor
 opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
 
 -- Indentation
-opt.tabstop = 2 -- Tab width
-opt.shiftwidth = 2 -- Indent width
-opt.softtabstop = 2 -- Soft tab stop
+opt.shiftwidth = 4 -- Indent width
+opt.softtabstop = -1 -- Soft tab stop
 opt.expandtab = true -- Use spaces instead of tabs
-opt.smartindent = true -- Smart auto-indenting
+opt.tabstop = 8 -- Tab width
+opt.smartindent = false -- Smart auto-indenting
 opt.autoindent = true -- Copy indent from current line
 
 -- Search settings
