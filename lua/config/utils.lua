@@ -3,7 +3,7 @@
 vim.keymap.set("n", "<leader>mi", function()
 	vim.cmd("MasonInstall powershell-editor-services")
 	vim.cmd("MasonInstall lua-language-server")
-	vim.cmd("MasonInstall pyright")
+	vim.cmd("MasonInstall basedpyright")
 	vim.cmd("MasonInstall ruff")
 	vim.cmd("MasonInstall html-lsp")
 	vim.cmd("MasonInstall typescript-language-server")
