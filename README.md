@@ -40,3 +40,31 @@ In case Chocolatey is not installed:
 ```powershell
 winget install chocolatey
 ```
+
+### Windows Terminal 
+
+Mapping ctrl+space will not work when using neovim in a Windows Terminal. To disable the mapping, open the Windows Terminal JSON settings and add the following:
+
+```json
+    ...
+    "actions":
+    [
+        {
+            "command":
+            {
+                "action": "sendInput",
+                "input": "\u001b[32;5u"
+            },
+            "id": "Terminal.CtrlSpaceWorkaround"
+        }
+    ],
+    ...
+    "keybindings":
+    [
+        {
+            "id": "Terminal.CtrlSpaceWorkaround",
+            "keys": "ctrl+space"
+        },
+    ...```
+
+
