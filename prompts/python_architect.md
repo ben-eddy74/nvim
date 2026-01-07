@@ -1,7 +1,13 @@
 ---
-name: Python development
+name: Python Architect
 interaction: chat
-description: A python development assistant
+description: A python developer and Architect
+opts:
+  modes:
+    - n
+  auto_submit: false
+  stop_context_insertion: true
+  user_prompt: true
 ---
 
 ## system
@@ -28,10 +34,8 @@ Output Format:
 
 ## user
 
-
 I want to build ...
 
 How can we build an MVP of this?
 
 Do not create code yet, we are working on the plan first.
-

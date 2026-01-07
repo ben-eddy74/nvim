@@ -1,7 +1,7 @@
 ---
-name: Code review
+name: Generic code review
 interaction: chat
-description: Explain how code works
+description: Explain how code works based on file type
 opts:
   modes:
     - n
