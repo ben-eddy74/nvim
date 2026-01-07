@@ -4,13 +4,17 @@ return {
 	root_markers = { "pyproject.toml" },
 	settings = {
 		basedpyright = {
-			analysis = {
-				useLibraryCodeForTypes = true,
-				diagnosticSeverityOverrides = {
-					reportUnusedVariable = "warning",
+			enabled = true,
+			settings = {
+				disableOrganizeImports = true,
+				basedpyright = {
+					analysis = {
+						ignore = { "*" },
+						typeCheckingMode = "recommended",
+						diagnosticMode = "workspace",
+						useLibraryCodeForTypes = true,
+					},
 				},
-				typeCheckingMode = "off", -- Set type-checking mode to off
-				diagnosticMode = "workspace",
 			},
 		},
 	},
