@@ -29,7 +29,17 @@ return {
 					return require("codecompanion.adapters").extend("gemini", {
 						schema = {
 							model = {
-								default = "gemini-2.5-flash",
+								default = "gemini-2.5-pro",
+							},
+						},
+					})
+				end,
+				gemini_strict = function()
+					return require("codecompanion.adapters").extend("gemini", {
+						schema = {
+							model = {
+								default = "gemini-2.5-pro",
+								temperature = 0.5,
 							},
 						},
 					})
