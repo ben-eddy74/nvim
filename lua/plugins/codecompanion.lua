@@ -61,7 +61,7 @@ return {
 		{
 			"<leader>ccc",
 			"<cmd>CodeCompanionChat Toggle<cr>",
-			desc = "CodeCompanion Chat",
+			desc = "Toggle CodeCompanion Chat",
 		},
 		{
 			"<leader>cci",
