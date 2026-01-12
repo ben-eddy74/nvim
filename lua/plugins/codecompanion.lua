@@ -57,7 +57,7 @@ return {
 		prompt_library = {
 			markdown = {
 				dirs = {
-					vim.fn.stdpath("config") .. "./prompts",
+					vim.fn.stdpath("config") .. "prompts",
 				},
 			},
 		},
