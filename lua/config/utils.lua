@@ -8,7 +8,6 @@ vim.keymap.set("n", "<leader>mi", function()
 	vim.cmd("MasonInstall html-lsp")
 	vim.cmd("MasonInstall typescript-language-server")
 	vim.cmd("MasonInstall eslint_lsp") -- javascript linter
-	vim.cmd("MasonInstall stylua")
 	vim.cmd("MasonInstall prettier")
 	vim.cmd("MasonInstall taplo")
 	vim.cmd("MasonInstall markdownlint")
