@@ -116,6 +116,13 @@ Snacks.setup({
 					".DS_Store",
 					"**/.node-gyp/**",
 				},
+				win = {
+					list = {
+						keys = {
+							["<c-r>"] = "edit_vsplit",
+						},
+					},
+				},
 			},
 		},
 	},
