@@ -14,7 +14,7 @@ require("conform").setup({
 		biome = { require_cwd = true },
 	},
 	default_format_opts = {
-		lsp_format = "fallback",
+		lsp_format = "never",
 	},
 	format_on_save = function(bufnr)
 		local ignore_filetypes = { "sql", "yaml", "yml" }
@@ -28,7 +28,7 @@ require("conform").setup({
 		if bufname:match("/node_modules/") then
 			return
 		end
-		return { timeout_ms = 750, lsp_format = "fallback" }
+		return { timeout_ms = 750, lsp_format = "never" }
 	end,
 })
 
