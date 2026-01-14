@@ -1,0 +1,32 @@
+{
+  "Lit Element": {
+    "prefix": ["litel"],
+    "body": [
+      "import {html, css, LitElement} from 'lit';",
+      "",
+      "export class ${1:HelloWorld } extends LitElement {",
+      "  static properties = {${0}};\n",
+      "  static styles = css``;\n",
+      "  constructor() {",
+      "    super();",
+      "}\n",
+      "  render() {",
+      "    return html`<p>Hello, world!</p>`;",
+      "  }",
+      "}",
+      "",
+      "customElements.define('${2:my}-${3:component}', ${1});"
+    ],
+    "description": "A new LitElement web component"
+  },
+  "ConnectecCallback": {
+    "prefix": ["connec"],
+    "body": ["connectedCallback(){", "  super.connectedCallback();", "}"],
+    "description": "ConnectecCallback lifecycle"
+  },
+  "DisconnectecCallback": {
+    "prefix": ["discon"],
+    "body": ["DisconnectedCallback(){", "  super.disconnectedCallback();", "}"],
+    "description": "DisconnectecCallback lifecycle"
+  }
+}
