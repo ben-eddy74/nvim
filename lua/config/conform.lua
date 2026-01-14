@@ -1,6 +1,5 @@
 require("conform").setup({
 	formatters_by_ft = {
-		lua = { "stylua" },
 		python = { "ruff_format", stop_after_first = true },
 		json = { "prettier", stop_after_first = true },
 		markdown = { "prettier" },
@@ -28,7 +27,7 @@ require("conform").setup({
 		if bufname:match("/node_modules/") then
 			return
 		end
-		return { timeout_ms = 750, lsp_format = "fallback" }
+		return { timeout_ms = 750, lsp_format = "never" }
 	end,
 })
 

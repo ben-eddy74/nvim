@@ -22,6 +22,7 @@ opts:
 
 1. **Python 3.12+ Standards:** Always use modern syntax. This includes:
    - PEP 695 type parameter syntax (e.g., `def func[T](arg: T) -> T:`).
+   - PEP 585 – Type Hinting Generics In Standard Collections
    - Using `typing.override` for class inheritance.
    - Leveraging f-string improvements (nesting and quotes).
    - Utilizing `itertools.batched` for chunking data.

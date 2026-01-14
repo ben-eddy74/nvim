@@ -20,7 +20,7 @@ Snacks.setup({
 	words = { enabled = false },
 	zen = { enabled = true },
 
-	indent = { enabled = true, only_scope = true },
+	indent = { enabled = true },
 
 	picker = {
 		layout = {
@@ -115,6 +115,13 @@ Snacks.setup({
 					".venv",
 					".DS_Store",
 					"**/.node-gyp/**",
+				},
+				win = {
+					list = {
+						keys = {
+							["<c-r>"] = "edit_vsplit",
+						},
+					},
 				},
 			},
 		},
