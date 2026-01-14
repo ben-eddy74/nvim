@@ -12,9 +12,9 @@ return {
 						name = "mylama",
 						schema = {
 							model = {
-								--default = "mistral:7b-instruct",
+								default = "mistral:7b-instruct",
 								--default = "codellama:34b",
-								default = "deepseek-coder:33b",
+								--default = "deepseek-coder:33b",
 							},
 							num_ctx = {
 								default = 4096,
