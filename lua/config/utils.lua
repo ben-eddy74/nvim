@@ -7,7 +7,7 @@ vim.keymap.set("n", "<leader>mi", function()
 	vim.cmd("MasonInstall ruff")
 	vim.cmd("MasonInstall html-lsp")
 	vim.cmd("MasonInstall typescript-language-server")
-	vim.cmd("MasonInstall eslint_lsp") -- javascript linter
+	vim.cmd("MasonInstall eslint_d") -- javascript linter
 	vim.cmd("MasonInstall prettier")
 	vim.cmd("MasonInstall taplo")
 	vim.cmd("MasonInstall markdownlint")
