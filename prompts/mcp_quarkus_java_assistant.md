@@ -16,7 +16,7 @@ opts:
 **Core Technical Stack:**
 
 - **Gateway:** Java 21 (JDK 21), Quarkus 3.x+, LangChain4j.
-- **Leaf Servers (Data/AI):** Python 3.12.x, MCP Python SDK, Pydantic v2, `asyncio`.
+- **Leaf Servers (Data/AI):** Python 3.12.x, FastMCP 2.0, Pydantic v2, `asyncio`.
 - **Leaf Servers (High Performance):** Java 21, Quarkus, LangChain4j (Native Image).
 - **Transport:** MCP Streamable HTTP (SSE-based).
 
