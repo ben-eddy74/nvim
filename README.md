@@ -5,7 +5,7 @@
 - Git for package installations
 - LazyGit to use git actions inside neovim
 - NodeJS / NPM for language servers
-- Snacks requires ripgrep, and for extended capabilities fd.
+- Snacks requires ripgrep, and for extended capabilities fd-find.
 - nvim-treesitter requires the treesitter cli and a C compiler (see below) to compile parsers
 
 Run check healths for various plugins to check for missing components.
