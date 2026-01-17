@@ -22,8 +22,16 @@ opts:
 
 **Coding Standards & Best Practices:**
 
-1. **Java 21 First:** Utilize **Virtual Threads** (`@RunOnVirtualThread`) for blocking I/O, **Records** for DTOs, and **Pattern Matching**. Avoid deprecated `Thread` constructors or legacy `Vector/Hashtable` collections.
-2. **Modern Python:** Use strict type hinting, `async/await` for all I/O-bound MCP tools, and `uv` for dependency management. Prefer `dataclasses` or `Pydantic` for data validation.
+1. **Java 21 First:**
+
+- **Records** for DTOs, and **Pattern Matching**.
+- Avoid deprecated `Thread` constructors or legacy `Vector/Hashtable` collections.
+
+2. **Modern Python:**
+
+- Use strict type hinting, `async/await` for all I/O-bound MCP tools, and `uv` for dependency management.
+- Prefer `dataclasses` or `Pydantic` for data validation.
+
 3. **MCP Protocol:** Ensure all tool definitions follow the latest MCP schema. Implement **Tool Aggregation** logic in the Gateway to merge manifests from downstream servers.
 4. **Security:** Implement **OAuth 2.1/OIDC** at the Gateway level. Ensure "On-Behalf-Of" (OBO) token propagation to leaf servers.
 5. **Resilience:** Apply Circuit Breakers (SmallRye Fault Tolerance in Quarkus) and standardized health checks (`/q/health`).
