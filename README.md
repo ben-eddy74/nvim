@@ -41,11 +41,17 @@ In case Chocolatey is not installed:
 winget install chocolatey
 ```
 
-### Windows Terminal 
+Then set the environment variable to cc:
+
+```powershell
+ $env:CC="cc"
+```
+
+### Windows Terminal
 
 Mapping ctrl+space will not work when using neovim in a Windows Terminal. To disable the mapping, open the Windows Terminal JSON settings and add the following:
 
-```json
+````json
     ...
     "actions":
     [
@@ -68,3 +74,4 @@ Mapping ctrl+space will not work when using neovim in a Windows Terminal. To dis
     ...```
 
 
+````
