@@ -22,7 +22,7 @@ opt.hlsearch = false -- Don't highlight search results
 opt.incsearch = true -- Show matches as you type
 
 -- Visual settings
-opt.colorcolumn = "88"
+opt.colorcolumn = "100"
 opt.winborder = "rounded"
 opt.guicursor = "" -- Fat cursor
 opt.termguicolors = true -- Enable 24-bit colors
