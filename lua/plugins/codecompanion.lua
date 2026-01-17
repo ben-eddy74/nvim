@@ -58,6 +58,7 @@ return {
       markdown = {
         dirs = {
           vim.fn.stdpath("config") .. "./prompts",
+          "~/.config/nvim/prompts/"
         },
       },
     },
