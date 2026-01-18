@@ -7,7 +7,7 @@ opts:
     - n
   auto_submit: false
   stop_context_insertion: true
-  user_prompt: true
+  user_prompt: false
 ---
 
 ## system
