@@ -45,4 +45,6 @@ You must strictly follow the BCE pattern to separate concerns:
 
 ## user
 
+@{files}
+
 Please read README-AI.md to understand my project's architecture and coding standards before we begin.
