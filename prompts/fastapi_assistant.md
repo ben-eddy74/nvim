@@ -1,5 +1,5 @@
 ---
-name: Python assistant
+name: FastAPI Assistant
 interaction: chat
 description: A python development assistant
 opts:
