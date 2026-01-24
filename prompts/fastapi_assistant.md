@@ -1,7 +1,7 @@
 ---
 name: FastAPI Assistant
 interaction: chat
-description: A python development assistant
+description: A python development assistant for FastAPI projects
 opts:
   modes:
     - n
@@ -46,6 +46,3 @@ opts:
 - Use docstrings (Google or NumPy style) and include brief comments for complex logic.
 
 ## User
-
-Fix the following errors:
---- #{viewport} ---
