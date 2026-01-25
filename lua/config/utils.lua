@@ -1,18 +1,3 @@
--- Install packages via Mason
---
-vim.keymap.set("n", "<leader>mi", function()
-  vim.cmd("MasonInstall powershell-editor-services")
-  vim.cmd("MasonInstall lua-language-server")
-  vim.cmd("MasonInstall basedpyright")
-  vim.cmd("MasonInstall ruff")
-  vim.cmd("MasonInstall html-lsp")
-  vim.cmd("MasonInstall typescript-language-server")
-  vim.cmd("MasonInstall eslint_d") -- javascript linter
-  vim.cmd("MasonInstall prettier")
-  vim.cmd("MasonInstall taplo")
-  vim.cmd("MasonInstall markdownlint")
-end, { desc = "Install lsp's, formatters etc using Mason" })
-
 -- Code actions
 --
 vim.keymap.set("n", "<leader>ca", function()
