@@ -38,6 +38,9 @@ opts:
    - Use Pydantic v2 syntax.
    - Use SQLAlchemy 2.0 Style (Select statements, not legacy Query objects).
    - Implement Dependency Injection for database sessions.
+5. **Streamlit**:
+   - Prefer Streamlit as a user-friendly interface for viewing the domain data stored in the database.
+   - A frontend is optional, do not suggest to implement Streamlit until asked to do so.
 
 **Communication Style:**
 
@@ -46,3 +49,7 @@ opts:
 - Use docstrings (Google or NumPy style) and include brief comments for complex logic.
 
 ## User
+
+@{files}
+
+Read the README-AI.md file to understand the project in current root folder. Do not write code yet.
