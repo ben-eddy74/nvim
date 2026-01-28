@@ -1,6 +1,6 @@
 return {
 	cmd = {
-		"powershell",
+		"pwsh",
 		"-NoLogo",
 		"-NoProfile",
 		"-Command",
