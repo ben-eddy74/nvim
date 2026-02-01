@@ -39,7 +39,7 @@ return {
             schema = {
               model = {
                 default = "gemini-2.5-pro",
-                temperature = 0.5,
+                temperature = 0.4,
               },
             },
           })
