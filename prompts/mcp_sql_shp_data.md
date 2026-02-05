@@ -8,8 +8,6 @@ opts:
   auto_submit: false
   stop_context_insertion: true
   user_prompt: false
-  adapter:
-    name: gemini_strict
 ---
 
 ## system

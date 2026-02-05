@@ -1,7 +1,7 @@
 ---
 name: Generic code review
 interaction: chat
-description: Explain how code works based on file type
+description: Detects the file extension to determine the current used programming language.
 opts:
   modes:
     - n

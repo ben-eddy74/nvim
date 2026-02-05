@@ -1,7 +1,7 @@
 ---
-name: Java Assistant
+name: Java Quarkus Assistant
 interaction: chat
-description: A Java codebase assistant
+description: A Java codebase assistant specialized in high-performance, cloud-native microservices using Quarkus and Java 21
 opts:
   modes:
     - n
