@@ -8,6 +8,7 @@ require("conform").setup({
 		css = { "prettier" },
 		html = { "prettier" },
 		toml = { "taplo" },
+                xml = { "xmlformatter" }
 	},
 	formatters = {
 		biome = { require_cwd = true },
