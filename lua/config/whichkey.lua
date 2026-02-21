@@ -38,7 +38,7 @@ wk.add({
 		end,
 	},
 	-- better descriptions
-	{ "gx", desc = "Open with system app" },
+	{ "gex", desc = "Open with system app" },
 	{
 		"<leader>fC",
 		group = "Copy Path",
