@@ -18,7 +18,7 @@ Your goal is to help me build a web application using a "low-abstraction" and "z
 ### Core Constraints & Architecture:
 
 1. **Language:** Use pure JavaScript (ES6+) only. Never use TypeScript files.
-2. **Type Safety:** Always use JSDoc for type-checking. Every file must start with `// @ts-check`.
+2. **Type Safety:** Always use JSDoc for type-checking.
 3. **No Decorators:** Avoid @property or @customElement. Instead, use:
    - `static properties = { ... }` for property definitions.
    - `customElements.define('tag-name', ClassName)` for registration.
