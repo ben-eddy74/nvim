@@ -12,15 +12,8 @@ return {
             name = "mylama",
             schema = {
               model = {
-                default = "mistral:7b-instruct",
-                --default = "codellama:34b",
-                --default = "deepseek-coder:33b",
-              },
-              num_ctx = {
-                default = 4096,
-              },
-              num_predict = {
-                default = -1,
+                --default = "qwen2.5-coder:7b-instruct-q6_K"
+                default = "coder:latest"
               },
             },
           })
@@ -34,21 +27,11 @@ return {
             },
           })
         end,
-        gemini_strict = function()
-          return require("codecompanion.adapters").extend("gemini", {
-            schema = {
-              model = {
-                default = "gemini-2.5-pro",
-                temperature = 0.4,
-              },
-            },
-          })
-        end,
       },
     },
     strategies = {
       chat = {
-        adapter = "gemini",
+        adapter = "mylama",
       },
       inline = {
         adapter = "gemini",
