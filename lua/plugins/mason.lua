@@ -9,16 +9,4 @@ return {
       }
     }
   },
-  ensure_installed = {
-    "powershell-editor-services",
-    "lua-language-server",
-    "python-lsp-server",
-    "ruff",
-    "html-lsp",
-    "typescript-language-server",
-    "eslint_d",
-    "prettier",
-    "taplo",
-    "markdownlint",
-  },
 }

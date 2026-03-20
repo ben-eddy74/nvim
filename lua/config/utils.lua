@@ -17,6 +17,22 @@ vim.keymap.set(
   { desc = "Sampler: Build module" }
 )
 
+-- Install language servers
+--
+vim.keymap.set("n", "<leader>msi", function()
+  vim.cmd("MasonInstall powershell-editor-services")
+  vim.cmd("MasonInstall lua-language-server")
+  vim.cmd("MasonInstall python-lsp-server")
+  vim.cmd("MasonInstall ruff")
+  vim.cmd("MasonInstall html-lsp")
+  vim.cmd("MasonInstall typescript-language-server")
+  vim.cmd("MasonInstall eslint_d") -- javascript linter
+  vim.cmd("MasonInstall stylua")
+  vim.cmd("MasonInstall prettier")
+  vim.cmd("MasonInstall markdownlint")
+end, { desc = "Install LSP packages" }
+)
+
 -- Install parsers
 --
 vim.keymap.set("n", "<leader>tsi", function()
