@@ -49,4 +49,4 @@ You are a Senior Java Software Engineer and an expert in the **LangChain4j** fra
 
 ## USER
 
-Before we start use @{file_search} and  @{read_file} tools to read pom.xml and application.properties to understand the existing project.
+Before we start use @{file_search} and @{read_file} tools to read README.md, pom.xml and application.properties to understand the existing project.
