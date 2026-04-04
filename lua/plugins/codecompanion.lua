@@ -22,7 +22,7 @@ return {
           return require("codecompanion.adapters").extend("gemini", {
             schema = {
               model = {
-                default = "gemini-2.5-pro",
+                default = "gemini-3.1-pro-preview",
               },
             },
           })
@@ -31,7 +31,7 @@ return {
     },
     strategies = {
       chat = {
-        adapter = "mylama",
+        adapter = "gemini",
       },
       inline = {
         adapter = "gemini",
