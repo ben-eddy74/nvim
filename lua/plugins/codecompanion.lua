@@ -22,7 +22,8 @@ return {
           return require("codecompanion.adapters").extend("gemini", {
             schema = {
               model = {
-                default = "gemini-3.1-pro-preview",
+                --default = "gemini-3.1-pro-preview",
+                default = "gemini-3-flash-preview",
               },
             },
           })
