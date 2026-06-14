@@ -10,6 +10,7 @@ opt.cursorline = true -- Highlight current line
 opt.wrap = false -- Don't wrap lines
 opt.scrolloff = 12 -- Keep 12 lines above/below cursor
 opt.sidescrolloff = 8 -- Keep 8 columns left/right of cursor
+opt.textwidth = 110
 
 -- Indentation
 opt.shiftwidth = 2 -- Indent width
