@@ -68,6 +68,12 @@ end, { desc = "Fuzzy Find: Keymaps" })
 map("n", "<leader>fd", function()
 	Snacks.picker.diagnostics()
 end, { desc = "Fuzzy Find: Diagnostics" })
+map("n", "<leader>tc", function()
+	Snacks.terminal()
+end, { desc = "Terminal: current directory" })
+map("n", "<leader>tr", function()
+	Snacks.terminal.toggle()
+end, { desc = "Terminal: Toggle terminal" })
 
 -- Unified Dev Terminal runner
 local function run_dev()
@@ -83,7 +89,10 @@ local function run_dev()
 		backend_dir = vim.fn.fnamemodify(cwd .. "/../backend", ":p")
 		frontend_dir = cwd
 	else
-		vim.notify("Could not detect backend/frontend folders relative to CWD. Running in current directory.", vim.log.levels.WARN)
+		vim.notify(
+			"Could not detect backend/frontend folders relative to CWD. Running in current directory.",
+			vim.log.levels.WARN
+		)
 		backend_dir = cwd
 		frontend_dir = cwd
 	end
@@ -97,4 +106,3 @@ local function run_dev()
 end
 
 map("n", "<leader>td", run_dev, { desc = "Terminal: Run dev servers side-by-side" })
-
