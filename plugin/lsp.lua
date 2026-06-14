@@ -11,7 +11,7 @@ vim.pack.add({
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "basedpyright", "vtsls", "html", "cssls" },
+	ensure_installed = { "lua_ls", "basedpyright", "vtsls", "html", "cssls", "powershell_es" },
 	handlers = {
 		function(server_name)
 			vim.lsp.enable(server_name)
@@ -19,10 +19,17 @@ require("mason-lspconfig").setup({
 	},
 })
 
+-- keybindings
+vim.keymap.set("n", "<leader>ca", function()
+	vim.lsp.buf.code_action()
+end, { desc = "LSP: Trigger code action menu" })
+vim.keymap.set("n", "<leader>li", "<cmd>checkhealth vim.lsp<CR>", { desc = "LSP: Check heath" })
+
 -- Configure basedpyright
 vim.lsp.config("basedpyright", {
+	filetypes = { "python" },
 	on_attach = on_attach,
-	root_dir = require("lspconfig.util").root_pattern(".git", "setup.py", "pyproject.toml", "requirements.txt"),
+	root_markers = { "pyproject.toml", "requirements.txt" },
 	settings = {
 		python = {
 			analysis = {
