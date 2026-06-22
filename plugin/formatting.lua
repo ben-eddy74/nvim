@@ -10,6 +10,7 @@ require("conform").setup({
 		typescript = { "prettier" },
 		html = { "prettier" },
 		css = { "prettier" },
+		-- xml = {} -- Will fall back to LSP (lemminx) formatting
 	},
 	format_on_save = {
 		timeout_ms = 1000,

@@ -11,7 +11,7 @@ vim.pack.add({
 
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "basedpyright", "vtsls", "html", "cssls", "powershell_es" },
+	ensure_installed = { "lua_ls", "basedpyright", "vtsls", "html", "cssls", "powershell_es", "lemminx" },
 	handlers = {
 		function(server_name)
 			vim.lsp.enable(server_name)
