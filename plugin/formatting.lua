@@ -21,7 +21,7 @@ require("conform").setup({
 vim.keymap.set({ "n", "v" }, "<leader>cn", "<cmd>ConformInfo<cr>", { desc = "Conform: Info" })
 
 vim.keymap.set({ "n", "v" }, "<leader>cf", function()
-	require("conform").format({ async = true }, function(err, did_edit)
+	require("conform").format({ async = true, lsp_format = "fallback", timeout_ms = 1500 }, function(err, did_edit)
 		if not err and did_edit then
 			vim.notify("Code formatted", vim.log.levels.INFO, { title = "Conform" })
 		end
