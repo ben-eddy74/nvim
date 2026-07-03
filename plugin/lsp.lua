@@ -95,3 +95,24 @@ vim.lsp.config("lua_ls", {
 		},
 	},
 })
+
+-- Configure powershell_es
+vim.lsp.config("powershell_es", {
+	on_attach = on_attach,
+	settings = {
+		powershell = {
+			codeFormatting = {
+				Preset = "OTBS",
+				NewLineAfterOpenBrace = true,
+				useCorrectCasing = true,
+				autoCorrectAliases = true,
+				openBraceOnSameLine = false,
+				pipelineIndentationStyle = "IncreaseIndentationForFirstPipeline",
+			},
+			init_options = {
+				enableProfileLoading = false,
+			},
+		},
+	},
+	filetypes = { "ps1", "psd1", "psm1" },
+})
