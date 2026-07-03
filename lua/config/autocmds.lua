@@ -20,6 +20,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Remove trailing spaces on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+	group = augroup("remove_trailing_spaces"),
+	callback = function()
+		-- Save cursor position to restore later
+		local curpos = vim.api.nvim_win_get_cursor(0)
+		-- Search and replace trailing whitespaces
+		vim.cmd([[keeppatterns %s/\s\+$//e]])
+		vim.api.nvim_win_set_cursor(0, curpos)
+	end,
+})
+
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {
 	group = augroup("resize_splits"),

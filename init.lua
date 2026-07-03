@@ -16,6 +16,7 @@ vim.g.maplocalleader = "\\"
 -- Load config
 require("config.settings")
 require("config.keymaps")
+require("config.autocmds")
 
 -- Set powershell as default shell when on Windows
 if vim.fn.has("win32") == 1 then
