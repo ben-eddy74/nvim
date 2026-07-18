@@ -17,8 +17,17 @@ require("blink.cmp").setup({
 	},
 	sources = {
 		default = { "lsp", "path", "snippets", "buffer" },
+		providers = {
+			lsp = { score_offset = 100 },
+			snippets = { score_offset = 50 },
+			buffer = {
+				score_offset = -50,
+				min_keyword_length = 4,
+			},
+		},
 	},
 	fuzzy = {
 		implementation = "lua",
+		sorts = { "exact", "score", "sort_text" },
 	},
 })
