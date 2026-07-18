@@ -1,0 +1,4 @@
+{
+  "include": ["src", "project_map"],
+  "exclude": ["**/.venv", "**/__pycache__"]
+}

@@ -31,11 +31,13 @@ vim.lsp.config("basedpyright", {
 	on_attach = on_attach,
 	root_markers = { "pyproject.toml", "requirements.txt" },
 	settings = {
-		python = {
+		basedpyright = {
 			analysis = {
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
 				typeCheckingMode = "basic",
+				diagnosticMode = "workspace",
+				indexing = true,
 			},
 		},
 	},
