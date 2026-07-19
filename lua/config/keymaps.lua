@@ -3,7 +3,7 @@ vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle, { desc = "Toggle nvim-t
 
 -- Close all buffers
 vim.keymap.set("n", "<leader>bda", ":bd|e#<CR>", { desc = "Delete all buffers except current" })
-vim.keymap.set("n", "<leader>bw", ":bufdo bwipeout", { desc = "Wipe out all buffers" })
+vim.keymap.set("n", "<leader>bw", ":bufdo bwipeout<CR>", { desc = "Wipe out all buffers" })
 
 -- Noice shortcuts
 vim.keymap.set("n", "<leader>nh", ":Noice history<CR>", { desc = "Open message history" })
