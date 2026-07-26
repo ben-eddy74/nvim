@@ -3,6 +3,7 @@ vim.pack.add({
 	{ src = "https://github.com/Saghen/blink.lib.git" },
 	{ src = "https://github.com/Saghen/blink.cmp.git" },
 	{ src = "https://github.com/folke/lazydev.nvim.git" },
+	{ src = "https://github.com/rafamadriz/friendly-snippets.git" },
 })
 
 -- Configure lazydev (replaces neodev.nvim)
