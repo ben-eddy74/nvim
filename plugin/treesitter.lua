@@ -5,7 +5,7 @@ vim.pack.add({
 
 -- Initialize treesitter
 require("nvim-treesitter").setup({
-	ensure_installed = { "javascript", "typescript", "html", "css", "lua", "vim", "vimdoc", "query" },
+	ensure_installed = { "javascript", "typescript", "html", "css", "lua", "vim", "vimdoc", "query", "robot" },
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
@@ -24,4 +24,12 @@ require("treesitter-context").setup({
 	separator = nil, -- Separator between context and content. Should be a single character string, like '-'.
 	zindex = 20, -- The Z-index of the context window
 	on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+})
+
+-- Enable Native Treesitter Highlighting
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "javascript", "typescript", "html", "css", "lua", "vim", "vimdoc", "query", "robot" },
+	callback = function()
+		vim.treesitter.start()
+	end,
 })
