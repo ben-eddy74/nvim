@@ -33,3 +33,30 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.treesitter.start()
 	end,
 })
+
+-- Add Structurizr
+vim.filetype.add({
+	extension = {
+		dsl = "structurizr",
+	},
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "structurizr" },
+	callback = function(args)
+		vim.treesitter.start(args.buf, "structurizr")
+	end,
+})
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TSUpdate",
+	callback = function()
+		require("nvim-treesitter.parsers").structurizr = {
+			install_info = {
+				url = "https://github.com/josteink/tree-sitter-structurizr",
+				branch = "master",
+				queries = "queries",
+			},
+		}
+	end,
+})
