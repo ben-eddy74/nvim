@@ -1,0 +1,27 @@
+<plugin>
+    <groupId>cz.habarta.typescript-generator</groupId>
+    <artifactId>typescript-generator-maven-plugin</artifactId>
+    <version>3.2.1263</version>
+    <executions>
+        <execution>
+            <id>generate-ts-interfaces</id>
+            <goals>
+                <goal>generate</goal>
+            </goals>
+            <phase>process-classes</phase>
+        </execution>
+    </executions>
+    <configuration>
+        <jsonLibrary>jackson2</jsonLibrary>
+        <classPatterns>
+            <!-- Auto-scan and convert all DTO classes in your DTO package -->
+            <pattern>com.example.project.dto.**</pattern>
+        </classPatterns>
+        <outputKind>module</outputKind>
+        <outputFileType>implementationFile</outputFileType>
+        <outputFile>../frontend/src/types/generated.d.ts</outputFile>
+        <mapEnum>asEnum</mapEnum>
+        <nonConstEnums>true</nonConstEnums>
+    </configuration>
+</plugin>
+
