@@ -8,6 +8,7 @@ require("conform").setup({
     python = { "ruff_fix", "ruff_format" },
     javascript = { "prettier" },
     typescript = { "prettier" },
+    javascriptreact = { "prettier" },
     typescriptreact = { "prettier" },
     html = { "prettier" },
     css = { "prettier" },
